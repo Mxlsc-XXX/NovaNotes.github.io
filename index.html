@@ -7,42 +7,32 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet"/>
   <style>
-body {
+    body {
       font-family: "Roboto", sans-serif;
       background-image: url("bg-speed.gif");
       background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       scroll-behavior: smooth;
       overflow-x: hidden;
       min-height: 100vh;
       opacity: 0;
       animation: fadeIn 1s ease-in-out forwards;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      color: #e0d7f7;
     }
 
     @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-
-    .preview {
-      transform: skew(0deg, 0deg);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      will-change: transform;
-      cursor: pointer;
+      to {
+        opacity: 1;
+      }
     }
 
-    .preview:hover,
-    .preview:focus {
-      transform: skew(-5deg, 0deg) scale(1.3);
-      box-shadow: 0 0 30px rgba(166, 0, 243, 0.9);
-      outline: none;
-    }
-
+    /* Scrollbar */
     ::-webkit-scrollbar {
-      width: 12px;
+      width: 10px;
     }
     ::-webkit-scrollbar-track {
       background: #000;
@@ -50,103 +40,7 @@ body {
     ::-webkit-scrollbar-thumb {
       background-color: #a600f3;
       border-radius: 20px;
-      border: 3px solid #000;
-    }
-
-    /* Link */
-    .md\:flex-row .mt-8 a {
-      display: inline-block;
-      transform: translateX(25%);
-      border-width: 2px;
-      border-radius: 18px;
-      width: 220px;
-      height: 52px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: 700;
-      transition: transform 0.4s ease, background-color 0.4s ease,
-        box-shadow 0.4s ease;
-      box-shadow: 0 0 0 transparent;
-      letter-spacing: 0.05em;
-      user-select: none;
-      background: linear-gradient(
-        135deg,
-        rgba(166, 0, 243, 0.8),
-        rgba(89, 0, 255, 0.8)
-      );
-      color: white;
-      backdrop-filter: blur(8px);
-      border: none;
-      cursor: pointer;
-      box-sizing: border-box;
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
-    }
-
-    .md\:flex-row .mt-8 a:hover,
-    .md\:flex-row .mt-8 a:focus {
-      transform: scale(1.7) skew(-15deg, 0deg) translateX(25%);
-      background-color: rgba(255, 255, 255, 0.25);
-      box-shadow: 0 0 25px rgba(166, 0, 243, 0.9);
-      outline: none;
-    }
-
-    /* Heading */
-    .md\:flex-row h1 {
-      transform: scale(2.11) translateX(25%);
-      transition: transform 0.4s ease, text-shadow 0.4s ease;
-      color: #d8b4fe;
-      text-shadow: 0 0 10px #a600f3, 0 0 20px #5a00ff;
-      user-select: none;
-    }
-
-    .md\:flex-row h1:hover,
-    .md\:flex-row h1:focus {
-      transform: scale(2.4) translateX(25%);
-      text-shadow: 0 0 20px #d8b4fe, 0 0 40px #a600f3, 0 0 60px #5a00ff;
-      outline: none;
-    }
-
-    /* Text white */
-    .md\:flex-row p.text-white {
-      transform: scale(1.35) translateX(25%);
-      transition: transform 0.4s ease, text-shadow 0.4s ease;
-      color: #e0d7f7;
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
-      user-select: none;
-    }
-
-    .md\:flex-row p.text-white:hover,
-    .md\:flex-row p.text-white:focus {
-      transform: scale(1.55) translateX(25%);
-      text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
-      outline: none;
-    }
-
-    /* Card Animation */
-    .feature-card {
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      background: linear-gradient(
-        135deg,
-        rgba(38, 0, 255, 0.7),
-        rgba(89, 0, 255, 0.7)
-      );
-      border: 1.5px solid #a600f3;
-      box-shadow: 0 0 15px rgba(166, 0, 243, 0.7);
-      cursor: default;
-      user-select: none;
-      will-change: transform;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-10px) skew(5deg, 0deg) scale(1.05);
-      box-shadow: 0 8px 30px rgba(166, 0, 243, 0.9);
-      outline: none;
-      filter: brightness(1.1);
-    }
-
-
-    .feature-card h3 {
-      text-shadow: 0 0 8px #d8b4fe;
+      border: 2px solid #000;
     }
 
     /* Fire effect */
@@ -154,21 +48,15 @@ body {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(
-        circle,
-        rgba(89, 0, 255, 0.35) 0%,
-        rgba(38, 0, 255, 0.25) 50%,
-        rgba(0, 0, 0, 0) 100%
-      );
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle, rgba(89, 0, 255, 0.35) 0%, rgba(38, 0, 255, 0.25) 50%, rgba(0, 0, 0, 0) 100%);
       opacity: 0.6;
       pointer-events: none;
       animation: flicker 1.5s infinite alternate;
       z-index: -1;
       mix-blend-mode: screen;
     }
-
     @keyframes flicker {
       0% {
         opacity: 0.6;
@@ -183,8 +71,6 @@ body {
         transform: translateY(0);
       }
     }
-
-    /* Flame animation */
     .flame {
       position: fixed;
       bottom: 0;
@@ -198,7 +84,6 @@ body {
       pointer-events: none;
       will-change: transform, opacity;
     }
-
     @keyframes rise {
       0% {
         transform: translateY(0) scale(1);
@@ -210,125 +95,465 @@ body {
       }
     }
 
-    /* Form inputs */
+    /* Navigation */
+    nav {
+      background: rgba(0, 0, 0, 0.85);
+      box-shadow: 0 0 30px #a600f3;
+      backdrop-filter: saturate(180%) blur(10px);
+      border-radius: 0 20px 20px 0;
+      width: 72px;
+      height: auto;
+      position: fixed;
+      top: 1px;
+      left: 1px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      gap: 1.5rem;
+      user-select: none;
+      transition: box-shadow 0.3s ease;
+    }
+    nav:hover,
+    nav:focus-within {
+      box-shadow: 0 0 40px #d8b4fe, 0 0 60px #a600f3, 0 0 80px #5a00ff;
+      outline: none;
+    }
+    nav a {
+      color: white;
+      font-size: 1.4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      border-bottom: none !important;
+      box-shadow: none !important;
+      text-decoration: none;
+    }
+    nav a.active,
+    nav a:hover,
+    nav a:focus {
+      background: linear-gradient(135deg, #a600f3, #5900ff);
+      box-shadow: 0 0 15px #d8b4fe;
+      transform: scale(1.2);
+      outline: none;
+    }
+    nav a i {
+      pointer-events: none;
+    }
+    nav .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 15px #a600f3;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      display: block;
+    }
+    nav .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    nav .logo:hover,
+    nav .logo:focus {
+      box-shadow: 0 0 30px #d8b4fe;
+      transform: scale(1.15);
+      outline: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 6rem 1.5rem;
+      user-select: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    @media (min-width: 768px) {
+      .hero {
+        flex-direction: row;
+        text-align: left;
+        gap: 3rem;
+        align-items: center;
+      }
+    }
+    .hero-text {
+      flex: 1;
+
+    }
+    .hero-text h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 4.5rem; /* Aumentar o tamanho */
+      color: #d8b4fe;
+      text-shadow: 0 0 10px #a600f3, 0 0 20px #5a00ff;
+      margin-bottom: 0.5rem;
+      user-select: text;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+      cursor: default;
+    }
+    .hero-text h1:hover,
+    .hero-text h1:focus {
+      transform: scale(1.1);
+      text-shadow: 0 0 20px #d8b4fe, 0 0 40px #a600f3, 0 0 60px #5a00ff;
+      outline: none;
+    }
+    .hero-text p {
+      font-size: 1.3rem;
+      color: #e0d7f7;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+      margin-bottom: 1.5rem;
+      user-select: text;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+      cursor: default;
+    }
+    .hero-text p:hover,
+    .hero-text p:focus {
+      transform: scale(1.05);
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+      outline: none;
+    }
+    .btn-skew {
+      display: inline-block;
+      background: transparent;
+      color: #a600f3;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 0.8rem 2.5rem; /* Aumentar o padding */
+      border-radius: 25px; /* Bordas mais arredondadas */
+      user-select: none;
+      cursor: pointer;
+      border: 3px solid #a600f3;
+      backdrop-filter: blur(8px);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      text-shadow: 0 0 6px rgba(166, 0, 243, 0.8);
+      box-sizing: border-box;
+    }
+    .btn-skew > * {
+      display: inline-block;
+    }
+    .btn-skew:hover,
+    .btn-skew:focus {
+      background-color: rgba(166, 0, 243, 0.25); /* Efeito de hover mais suave */
+      box-shadow: 0 0 30px #a600f3;
+      color: #d8b4fe;
+      transform: scale(2);
+      outline: none;
+    }
+    .hero-image {
+      flex: 1;
+      max-width: 480px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 40px #a600f3;
+      filter: drop-shadow(0 0 15px #5a00ff);
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      user-select: none;
+    }
+    .hero-image:hover,
+    .hero-image:focus {
+      transform: rotateY(15deg) rotateX(8deg) scale(1.15);
+      box-shadow: 0 0 50px #d8b4fe, 0 0 70px #a600f3, 0 0 90px #5a00ff;
+      outline: none;
+      filter: drop-shadow(0 0 25px #d8b4fe);
+    }
+
+    /* Features Section */
+    #features {
+      margin-bottom: 4rem;
+    }
+    #features h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.75rem;
+      color: #d8b4fe;
+      text-shadow: 0 0 10px #a600f3, 0 0 20px #5a00ff;
+      margin-bottom: 0.5rem;
+      user-select: text;
+      text-align: center;
+      cursor: default;
+    }
+    #features p {
+      color: #e0d7f7;
+      text-align: center;
+      font-size: 1.15rem;
+      margin-bottom: 2.5rem;
+      user-select: text;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: linear-gradient(135deg, rgba(38, 0, 255, 0.85), rgba(89, 0, 255, 0.85));
+      border: 2px solid #a600f3;
+      border-radius: 20px; /* Bordas mais arredondadas */
+      padding: 2rem; /* Aumentar o padding */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      color: white;
+      cursor: default;
+      user-select: text;
+      transition: all 0.3s ease;
+      will-change: box-shadow;
+    }
+    .feature-card:hover,
+    .feature-card:focus {
+      box-shadow: 0 0 50px #d8b4fe, 0 0 70px #a600f3, 0 0 90px #5a00ff;
+      filter: brightness(1.15);
+      outline: none;
+    }
+    .feature-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px #d8b4fe;
+    }
+    .feature-card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    }
+
+    /* Contact Section */
+    #contact {
+      margin-bottom: 4rem;
+    }
+    #contact h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.75rem;
+      color: #d8b4fe;
+      text-shadow: 0 0 10px #a600f3, 0 0 20px #5a00ff;
+      margin-bottom: 0.5rem;
+      user-select: text;
+      text-align: center;
+      cursor: default;
+    }
+    #contact p {
+      color: #e0d7f7;
+      text-align: center;
+      font-size: 1.15rem;
+      margin-bottom: 2.5rem;
+      user-select: text;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    }
+    form {
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
     input[type="text"],
     input[type="email"],
     textarea {
-      transition: box-shadow 0.3s ease, border-color 0.3s ease;
-      font-weight: 500;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #a600f3;
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      color: white;
+      font-weight: 600;
       font-size: 1rem;
       letter-spacing: 0.02em;
+      box-shadow: 0 0 12px #a600f3;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+      user-select: text;
+      outline-offset: 2px;
     }
-
     input[type="text"]:focus,
     input[type="email"]:focus,
     textarea:focus {
-      outline: none;
-      border-color: #a600f3;
-      box-shadow: 0 0 10px #a600f3;
-      background-color: rgba(38, 0, 255, 0.6);
+      border-color: #d8b4fe;
+      box-shadow: 0 0 25px #d8b4fe;
+      background-color: rgba(38, 0, 255, 0.85);
       color: white;
+      outline: none;
     }
-
-    /* Donation QR */
-    #donate img {
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button[type="submit"] {
+      background: transparent;
+      color: #a600f3;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 0.6rem 2rem;
+      border-radius: 18px;
+      user-select: none;
       cursor: pointer;
       border: 3px solid #a600f3;
-      box-shadow: 0 0 20px #a600f3;
+      backdrop-filter: blur(8px);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      text-shadow: 0 0 6px rgba(166, 0, 243, 0.8);
+      transform: skewX(-10deg);
+      box-sizing: border-box;
+    }
+    button[type="submit"] > * {
+      display: inline-block;
+      transform: skewX(10deg);
+    }
+    button[type="submit"]:hover,
+    button[type="submit"]:focus {
+      background-color: rgba(166, 0, 243, 0.15);
+      box-shadow: 0 0 30px #a600f3;
+      color: #d8b4fe;
+      transform: scale(1.15) skewX(-10deg);
+      outline: none;
     }
 
+    /* Donation Section */
+    #donate {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+    #donate h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.75rem;
+      color: #d8b4fe;
+      text-shadow: 0 0 10px #a600f3, 0 0 20px #5a00ff;
+      margin-bottom: 0.5rem;
+      user-select: text;
+      cursor: default;
+    }
+    #donate p {
+      color: #e0d7f7;
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+      user-select: text;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    }
+    #donate img {
+      width: 12rem;
+      height: 12rem;
+      border-radius: 20px;
+      border: 3px solid #a600f3;
+      box-shadow: 0 0 40px #a600f3;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+      filter: drop-shadow(0 0 15px #a600f3);
+      user-select: none;
+      margin: 0 auto 1rem auto;
+      display: block;
+    }
     #donate img:hover,
     #donate img:focus {
-      transform: scale(1.1) rotate(3deg);
-      box-shadow: 0 0 30px #d8b4fe;
+      transform: scale(1.15) rotate(3deg);
+      box-shadow: 0 0 50px #d8b4fe;
       outline: none;
     }
-
-    /* Footer icons */
-    footer i {
-      transition: color 0.3s ease, transform 0.3s ease;
-      font-size: 1.5rem;
-      cursor: pointer;
+    #donate p strong {
+      color: #d8b4fe;
+      text-shadow: 0 0 12px #a600f3;
     }
 
+    /* Footer */
+    footer {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 1rem 0; /* Adicionar padding */
+      border-radius: 50px;
+      position: relative;
+      text-align: center;
+      color: #cbb9ff;
+      font-size: 0.9rem;
+      user-select: none;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+    }
+    footer .social-icons {
+      margin-top: 30rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    footer i {
+      font-size: 1.5rem;
+      color: #cbb9ff;
+      cursor: pointer;
+      transition: transform 0.3s ease, color 0.3s ease; 
+      filter: drop-shadow(0 0 6px #a600f3);
+    }
     footer i:hover,
     footer i:focus {
-      color: #a600f3;
-      transform: scale(1.3);
+      color: #d8b4fe;
+      transform: scale(1.4); /* Aumentar o efeito de hover */
       outline: none;
+      filter: drop-shadow(0 0 20px #d8b4fe);
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 1024px) {
+    /* Responsive */
+    @media (max-width: 768px) {
       nav {
         position: fixed;
         width: 100%;
         height: 60px;
         bottom: 0;
         left: 0;
-        background: rgba(0, 0, 0, 0.6);
-        box-shadow: 0 -2px 10px rgba(166, 0, 243, 0.7);
-        display: flex;
+        border-radius: 0;
+        flex-direction: row;
         justify-content: center;
-        align-items: center;
-        z-index: 50;
+        padding: 0;
+        gap: 2rem;
       }
-      nav > div {
-        flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
-        max-width: 600px;
-        margin: 0;
-      }
-      nav > div > div {
-        flex-direction: row;
-        margin-top: 0;
-        gap: 40px;
+      nav .logo {
+        width: 40px;
+        height: 40px;
       }
       nav a {
-        border: none !important;
-        padding: 8px 12px !important;
-        font-size: 1.3rem !important;
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
       }
-      nav a.border-b-4 {
-        border-bottom: none !important;
-        box-shadow: 0 0 10px #a600f3;
-        border-radius: 50%;
-        padding: 10px 14px !important;
+      .container {
+        padding: 2rem 1rem 5rem 1rem;
+        max-width: 100%;
       }
-      .ml-20 {
-        margin-left: 0 !important;
+      .hero {
+        flex-direction: column;
+        text-align: center;
       }
-      .py-20 {
-        padding-top: 4rem !important;
-        padding-bottom: 4rem !important;
+      .hero-text h1 {
+        font-size: 3rem;
       }
-      .md\:flex-row {
-        flex-direction: column !important;
+      .hero-text p {
+        font-size: 1.15rem;
       }
-      .md\:w-1\/2 {
-        width: 100% !important;
+      .hero-image {
+        max-width: 320px;
       }
-      .md\:mt-0 {
-        margin-top: 1.5rem !important;
+      #features h2,
+      #contact h2,
+      #donate h2 {
+        font-size: 2rem;
       }
-      .grid-cols-3 {
-        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+      #features p,
+      #contact p,
+      #donate p {
+        font-size: 1rem;
       }
-      .max-w-6xl {
-        max-width: 90vw !important;
+      .features-grid {
+        grid-template-columns: 1fr !important;
       }
-      .text-4xl {
-        font-size: 2.5rem !important;
+      form {
+        max-width: 100%;
       }
-      .text-3xl {
-        font-size: 2rem !important;
-      }
-      .mt-8 a {
-        width: 180px !important;
-        height: 44px !important;
-        font-size: 18px !important;
+      #donate img {
+        width: 10rem;
+        height: 10rem;
       }
     }
 
@@ -340,246 +565,227 @@ body {
         scroll-behavior: auto !important;
       }
     }
-        
   </style>
  </head>
- <body class="bg-gray-100 text-gray-800">
-    <div class="fire-effect"></div>
-    <nav class="bg-transparent shadow-lg fixed h-full">
-    <div class="flex flex-col items-center py-4">
-    <div>
-     <a class="flex items-center py-4 px-2" href="#">
-      <img alt="Logo do NOVA, um ícone de caderno com uma estrela" class="h-8 w-8 mr-2" height="50" src="icon.png" width="50"/>
-      <span class="font-semibold text-white text-lg">
-       NOVA
-      </span>
-     </a>
-    </div>
-    <div class="flex flex-col items-center space-y-4 mt-10">
-     <a class="py-4 px-2 text-white border-b-4 border-purple-500 font-semibold" href="#">
-      <i class="fas fa-home"></i>
-     </a>
-     <a class="py-4 px-2 text-white font-semibold hover:text-purple-500 transition duration-300" href="#features">
-      <i class="fas fa-cogs"></i>
-     </a>
-     <a class="py-4 px-2 text-white font-semibold hover:text-purple-500 transition duration-300" href="#contact">
-      <i class="fas fa-envelope"></i>
-     </a>
-    </div>
-   </div>
+ <body>
+  <div class="fire-effect"></div>
+  <nav aria-label="Navegação principal">
+   <a href="#" class="logo" aria-label="Página inicial NOVA" tabindex="0">
+    <img src="icon.png" alt="Logo do NOVA, um ícone de caderno com uma estrela"/>
+   </a>
+   <a href="#" class="active" aria-label="Página inicial" tabindex="0" title="Início">
+    <i class="fas fa-home"></i>
+   </a>
+   <a href="#features" aria-label="Funcionalidades" tabindex="0" title="Funcionalidades">
+    <i class="fas fa-cogs"></i>
+   </a>
+   <a href="#contact" aria-label="Contato" tabindex="0" title="Contato">
+    <i class="fas fa-envelope"></i>
+   </a>
   </nav>
-  <!-- Hero Section -->
-  <div class="bg-transparent py-20 ml-20">
-   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
-    <div class="text-left md:w-1/2">
-     <h1 class="text-4xl font-bold text-white" style="font-family: 'Pacifico', cursive;">
-      NOVA
-     </h1>
-     <p class="mt-4 text-white">
-      Suas notas, porém, modernizadas.
-     </p>
-     <div class="mt-8">
-      <a class="border-2 border-purple-500 text-white py-2 px-4 rounded hover:bg-purple-400 transition duration-300 btn-skew" href="#">
-       Baixe Agora
-      </a>
-     </div>
+  <main class="container" role="main">
+   <!-- Hero Section -->
+   <section class="hero" aria-label="Seção principal do NOVA">
+    <div class="hero-text">
+     <h1 tabindex="0">NOVA</h1>
+     <p tabindex="0">Suas notas, porém, modernizadas.</p>
+     <a href="#" class="btn-skew" role="button" tabindex="0" aria-label="Baixe Agora o aplicativo NOVA">
+      <span>Baixe Agora</span>
+     </a>
     </div>
-    <div class="md:w-1/2 mt-10 md:mt-0">
-     <img alt="Imagem do aplicativo NOVA mostrando a interface de anotações" class="preview" height="400" src="preview.png" width="400"/>
+    <img src="preview.png" alt="Imagem do aplicativo NOVA mostrando a interface de anotações" class="hero-image" tabindex="0" width="480" height="480"/>
+   </section>
+   <!-- Features Section -->
+   <section id="features" aria-labelledby="features-title" class="mb-16">
+    <h2 id="features-title" tabindex="0">Funcionalidades</h2>
+    <p tabindex="0">Descubra as funcionalidades incríveis que o NOVA oferece.</p>
+    <div class="features-grid">
+     <article class="feature-card" tabindex="0" aria-label="Funcionalidade Organização">
+      <h3>Organização</h3>
+      <p>Organize suas anotações em categorias e tags para fácil acesso.</p>
+     </article>
+     <article class="feature-card" tabindex="0" aria-label="Funcionalidade Mapas mentais">
+      <h3>Mapas mentais</h3>
+      <p>Crie mapas mentais interativos para visualizar suas ideias de forma clara.</p>
+     </article>
+     <article class="feature-card" tabindex="0" aria-label="Funcionalidade IA Assistente">
+      <h3>IA Assistente</h3>
+      <p>Utilize a inteligência artificial para ajudar na organização e busca de anotações.</p>
+     </article>
+     <article class="feature-card" tabindex="0" aria-label="Funcionalidade Finanças">
+      <h3>Finanças</h3>
+      <p>Controle suas finanças pessoais com gráficos e relatórios detalhados.</p>
+     </article>
+     <article class="feature-card" tabindex="0" aria-label="Funcionalidade Agenda">
+      <h3>Agenda</h3>
+      <p>Mantenha sua agenda organizada com lembretes e eventos importantes.</p>
+     </article>
     </div>
-   </div>
-  </div>
-  <!-- Features Section -->
-  <div class="bg-transparent py-20 ml-20" id="features">
-   <div class="max-w-6xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold text-white" style="font-family: 'Pacifico', cursive;">
-     Funcionalidades
-    </h2>
-    <p class="mt-4 text-white">
-     Descubra as funcionalidades incríveis que o NOVA oferece.
-    </p>
-    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-     <div class="bg-black bg-opacity-50 p-6 rounded-lg shadow-lg border border-white feature-card">
-      <h3 class="text-xl font-semibold text-white">
-       Organização
-      </h3>
-      <p class="mt-2 text-white">
-       Organize suas anotações em categorias e tags para fácil acesso.
-      </p>
-     </div>
-     <div class="bg-black bg-opacity-50 p-6 rounded-lg shadow-lg border border-white feature-card">
-      <h3 class="text-xl font-semibold text-white">
-       Mapas mentais
-      </h3>
-      <p class="mt-2 text-white">
-        Crie mapas mentais interativos para visualizar suas ideias de forma clara.
-      </p>
-     </div>
-     <div class="bg-black bg-opacity-50 p-6 rounded-lg shadow-lg border border-white feature-card">
-      <h3 class="text-xl font-semibold text-white">
-       IA Assistente
-      </h3>
-      <p class="mt-2 text-white">
-        Utilize a inteligência artificial para ajudar na organização e busca de anotações.
-      </p>
-     </div>
-       <div class="bg-black bg-opacity-50 p-6 rounded-lg shadow-lg border border-white feature-card">
-        <h3 class="text-xl font-semibold text-white">
-         Finanças
-        </h3>
-        <p class="mt-2 text-white">
-        Controle suas finanças pessoais com gráficos e relatórios detalhados.
-        </p>
-       </div>
-       <div class="bg-black bg-opacity-50 p-6 rounded-lg shadow-lg border border-white feature-card">
-        <h3 class="text-xl font-semibold text-white">
-         Agenda
-        </h3>
-        <p class="mt-2 text-white">
-        Mantenha sua agenda organizada com lembretes e eventos importantes.
-        </p>
-       </div>
-    </div>
-   </div>
-  </div>
-  <!-- Contact Section -->
-  <div class="bg-transparent py-20 ml-20" id="contact">
-   <div class="max-w-6xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold text-white" style="font-family: 'Pacifico', cursive;">
-     Contato
-    </h2>
-    <p class="mt-4 text-white">
-     Entre em contato conosco para mais informações.
-    </p>
-    <div class="mt-10">
-     <form class="max-w-xl mx-auto">
-      <div class="mb-4">
-       <input class="w-full p-4 rounded-lg border border-white bg-black bg-opacity-50 text-white" placeholder="Seu Nome" type="text"/>
-      </div>
-      <div class="mb-4">
-       <input class="w-full p-4 rounded-lg border border-white bg-black bg-opacity-50 text-white" placeholder="Seu Email" type="email"/>
-      </div>
-      <div class="mb-4">
-       <textarea class="w-full p-4 rounded-lg border border-white bg-black bg-opacity-50 text-white" placeholder="Sua Mensagem" rows="4"></textarea>
-      </div>
-      <div>
-       <button class="border-2 border-purple-500 text-white py-2 px-4 rounded hover:bg-purple-400 transition duration-300 btn-skew" type="submit">
-        Enviar
-       </button>
-      </div>
-     </form>
-    </div>
-   </div>
-  </div>
-  <!-- Donation Section -->
-<div class="bg-transparent py-20 ml-20" id="donate">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-white" style="font-family: 'Pacifico', cursive;">
-        Apoie o NOVA
-      </h2>
-      <p class="mt-4 text-white">
-        Se você curte o app, considere apoiar com uma doação via Pix 💜
-      </p>
-      <div class="mt-6">
-        <img src="pix-qr.png" alt="QR Code do Pix para doações" class="mx-auto w-48 h-48 rounded-lg shadow-lg"/>
-        <p class="mt-4 text-white">
-          Chave Pix: <strong>mxlsc@proton.me</strong>
-        </p>
-      </div>
-    </div>
-  </div>
+   </section>
+   <!-- Contact Section -->
+   <section id="contact" aria-labelledby="contact-title" class="mb-16">
+    <h2 id="contact-title" tabindex="0">Contato</h2>
+    <p tabindex="0">Entre em contato conosco para mais informações.</p>
+    <form aria-label="Formulário de contato" class="mx-auto max-w-xl">
+     <input type="text" placeholder="Seu Nome" aria-label="Seu Nome" required/>
+     <input type="email" placeholder="Seu Email" aria-label="Seu Email" required/>
+     <textarea placeholder="Sua Mensagem" aria-label="Sua Mensagem" rows="4" required></textarea>
+     <button type="submit" class="btn-skew" aria-label="Enviar mensagem">
+      <span>Enviar</span>
+     </button>
+    </form>
+   </section>
+   <!-- Donation Section -->
+   <section id="donate" aria-labelledby="donate-title" class="mb-16">
+    <h2 id="donate-title" tabindex="0">Apoie o NOVA</h2>
+    <p tabindex="0">Se você curte o app, considere apoiar com uma doação via Pix 💜</p>
+    <img src="pix-qr.png" alt="QR Code do Pix para doações" tabindex="0" />
+    <p tabindex="0" class="mt-4">Chave Pix: <strong>mxlsc@proton.me</strong></p>
+   </section>
+  </main>
   <!-- Footer -->
-  <footer class="bg-transparent py-6 ml-20">
-   <div class="max-w-6xl mx-auto px-4 text-center">
-    <p class="text-white">
-     © 2025 NOVA. Todos os direitos reservados.
-    </p>
-    <div class="mt-4 flex justify-center space-x-4">
-     <a class="text-white hover:text-purple-500" href="https://github.com/Mxlsc-XXX">
-      <i class="fab fa-github"></i>
-     </a>
-     <a class="text-white hover:text-purple-500" href="https://discordapp.com/users/586608984560238595">
-      <i class="fab fa-discord"></i>
-     </a>
-     <a class="text-white hover:text-purple-500" href="https://w.app/mxlsc">
-      <i class="fab fa-whatsapp"></i>
-     </a>
-    </div>
-   </div>
+  <footer>
+   <p tabindex="0">© 2025 NOVA. Todos os direitos reservados.</p>
+    <a href="https://github.com/Mxlsc-XXX" target="_blank" rel="noopener noreferrer" aria-label="GitHub NOVA" tabindex="0">
+     <i class="fab fa-github"></i>
+    </a>
+    <a href="https://discordapp.com/users/586608984560238595" target="_blank" rel="noopener noreferrer" aria-label="Discord NOVA" tabindex="0">
+     <i class="fab fa-discord"></i>
+    </a>
+    <a href="https://w.app/mxlsc" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp NOVA" tabindex="0">
+     <i class="fab fa-whatsapp"></i>
+    </a>
   </footer>
   <script>
     // Smooth scrolling for navbar links
-     document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
-       anchor.addEventListener("click", function (e) {
-         e.preventDefault();
-         const target = document.querySelector(this.getAttribute("href"));
-         if (target) {
-           target.scrollIntoView({
-             behavior: "smooth",
-             block: "start",
-           });
-           // For mobile nav, close if needed (not implemented here)
-         }
-       });
-     });
- 
-     // Animate feature cards on scroll
-     const featureCards = document.querySelectorAll(".feature-card");
-     const observerOptions = {
-       root: null,
-       rootMargin: "0px",
-       threshold: 0.15,
-     };
- 
-     const observer = new IntersectionObserver((entries) => {
-       entries.forEach((entry) => {
-         if (entry.isIntersecting) {
-           entry.target.classList.add("animate-fadeInUp");
-           observer.unobserve(entry.target);
-         }
-       });
-     }, observerOptions);
- 
-     featureCards.forEach((card) => {
-       observer.observe(card);
-     });
- 
-     // Add fadeInUp animation via Tailwind plugin style
-     const style = document.createElement("style");
-     style.textContent = `
-       @keyframes fadeInUp {
-         0% {
-           opacity: 0;
-           transform: translateY(20px);
-         }
-         100% {
-           opacity: 1;
-           transform: translateY(0);
-         }
-       }
-       .animate-fadeInUp {
-         animation: fadeInUp 0.8s ease forwards;
-       }
-     `;
-     document.head.appendChild(style);
- 
-     // Flame effect creation
-     function createFlame() {
-       const flame = document.createElement("div");
-       flame.classList.add("flame");
-       flame.style.width = Math.random() * 12 + 6 + "px"; // Width random 6-18px
-       flame.style.height = Math.random() * 25 + 12 + "px"; // Height random 12-37px
-       flame.style.left = Math.random() * 100 + "vw"; // Random horizontal position
-       flame.style.animationDuration = Math.random() * 2 + 2 + "s"; // Duration 2-4s
-       flame.style.opacity = 0.6 + Math.random() * 0.4; // Opacity 0.6-1
-       document.body.appendChild(flame);
- 
-       setTimeout(() => {
-         flame.remove();
-       }, 4000);
-     }
- 
-     setInterval(createFlame, 400); // Create flame every 400ms
-   </script>
+    document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    });
+
+    // Animate feature cards on scroll with subtle fade and scale
+    const featureCards = document.querySelectorAll(".feature-card");
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.15,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fadeInScale");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    featureCards.forEach((card) => {
+      observer.observe(card);
+    });
+
+    // Add fadeInScale animation style
+    const style = document.createElement("style");
+    style.textContent = `
+      @keyframes fadeInScale {
+        0% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .animate-fadeInScale {
+        animation: fadeInScale 0.6s ease forwards;
+      }
+    `;
+    document.head.appendChild(style);
+
+  // Flame effect creation
+    const maxFlames = 100; // Limite máximo de chamas na tela
+    let currentFlames = 0; // Contador de chamas atuais
+
+    function createFlame() {
+      if (currentFlames < maxFlames) { // Verifica se o número máximo de chamas não foi atingido
+        const flame = document.createElement("div");
+        flame.classList.add("flame");
+        flame.style.width = Math.random() * 12 + 6 + "px"; // Width random 6-18px
+        flame.style.height = Math.random() * 25 + 12 + "px"; // Height random 12-37px
+        flame.style.left = Math.random() * 100 + "vw"; // Random horizontal position
+        flame.style.animationDuration = Math.random() * 2 + 2 + "s"; // Duration 2-4s
+        flame.style.opacity = 0.6 + Math.random() * 0.4; // Opacity 0.6-1
+        document.body.appendChild(flame);
+        currentFlames++; // Incrementa o contador de chamas
+
+        setTimeout(() => {
+          flame.remove();
+          currentFlames--; // Decrementa o contador de chamas ao remover
+        }, 4000);
+      }
+    }
+
+    // Aumentar o intervalo para 200ms
+    setInterval(createFlame, 200);
+
+    // 3D tilt effect for preview image and feature cards
+    function tiltEffect(element, maxTilt = 15, scale = 1.5) {
+      element.addEventListener("mousemove", (e) => {
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const deltaX = (x - centerX) / centerX;
+        const deltaY = (y - centerY) / centerY;
+        const rotateX = deltaY * maxTilt * -1;
+        const rotateY = deltaX * maxTilt;
+        element.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale}) translateZ(40px)`;
+        element.style.transition = "transform 0.1s ease";
+      });
+
+      element.addEventListener("mouseleave", () => {
+        element.style.transform = "";
+        element.style.transition = "transform 0.5s ease";
+      });
+
+      element.addEventListener("focus", () => {
+        element.style.transform = `rotateX(0deg) rotateY(0deg) scale(${scale}) translateZ(40px)`;
+        element.style.transition = "transform 0.3s ease";
+      });
+
+      element.addEventListener("blur", () => {
+        element.style.transform = "";
+        element.style.transition = "transform 0.5s ease";
+      });
+    }
+
+    const preview = document.querySelector(".hero-image");
+    if (preview) tiltEffect(preview, 20, 1.25);
+
+    featureCards.forEach((card) => {
+            tiltEffect(card, 10, 1.1);
+        });
+
+    const qrCode = document.querySelector("#donate img");
+    if (qrCode) tiltEffect(qrCode, 10, 1.1);
+
+    const downloadButton = document.querySelector(".btn-skew");
+    if (downloadButton) tiltEffect(downloadButton, 10, 1.1);
+
+    const submitButton = document.querySelector("button[type='submit']");
+    if (submitButton) tiltEffect(submitButton, 10, 1.1);
+    
+
+  </script>
  </body>
 </html>
